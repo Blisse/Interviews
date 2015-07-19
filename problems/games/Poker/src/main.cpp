@@ -3,9 +3,9 @@
 
 int main(int argc, char const *argv[])
 {
-    const Poker::Card& aceSpadesString = Poker::Card::CardFactory::createFromString("Ad");
-    const Poker::Card& aceSpadesValues = Poker::Card::CardFactory::createFromValues(0, 0);
-    const Poker::Card& aceSpadesCharacters = Poker::Card::CardFactory::createFromCharacters('A', 'd');
+    const Poker::Card& aceSpadesString = Poker::Card::Factory::createFromString("Ad");
+    const Poker::Card& aceSpadesValues = Poker::Card::Factory::createFromValues(0, 0);
+    const Poker::Card& aceSpadesCharacters = Poker::Card::Factory::createFromCharacters('A', 'd');
 
     std::cout << aceSpadesString << std::endl;
     std::cout << aceSpadesValues << std::endl;
