@@ -7,19 +7,19 @@ struct linked_list_node {
 };
 typedef struct linked_list_node linked_list_node_t;
 
-linked_list_node_t* create_linked_list_node(void* value);
-
-
 struct linked_list {
     struct linked_list_node* head;
 };
 typedef struct linked_list linked_list_t;
 
+
+linked_list_node_t* create_linked_list_node(void* value);
 linked_list_t* create_linked_list();
 
+int linked_list_count(linked_list_t* list);
+linked_list_node_t* linked_list_last(linked_list_t* list);
 
 void linked_list_push(linked_list_t* list, linked_list_node_t* node);
-
 linked_list_node_t* linked_list_pop(linked_list_t* list);
 
 #endif

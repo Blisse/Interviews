@@ -8,17 +8,19 @@ enable_testing()
 set(CMAKE_C_FLAGS "-std=c99")
 
 include_directories(
+    src
     src/lists
     src/tests
     )
 
 add_executable(
-    linked_list_test
-    src/tests/linked_list_test.c
+    linked_list_tests
     src/lists/linked_list.c
+    src/tests/linked_list_test.c
+    src/tests/test_utilities.c
     )
 
 add_test(
     linked_list_test
-    linked_list_test
+    linked_list_tests
     )

@@ -15,34 +15,47 @@ linked_list_t* create_linked_list() {
     return list;
 }
 
-void linked_list_push(linked_list_t* list, linked_list_node_t* node) {
-    if (list == NULL) {
-        return;
-    }
-    if (node == NULL) {
-        return;
+int linked_list_count(linked_list_t* list) {
+    if (list->head == NULL) {
+        return 0;
     }
 
+    int count = 1;
     linked_list_node_t* iter = list->head;
-    if (iter == NULL) {
-        list->head = node;
-        return;
-    } else {
-        while (iter->next != NULL) {
-            iter = iter->next;
-        }
-        iter->next = node;
+    while (iter->next != NULL) {
+        count = count + 1;
+        iter = iter->next;
     }
+
+    return count;
 }
 
-linked_list_node_t* linked_list_pop(linked_list_t* list) {
-    if (list == NULL) {
-        return NULL;
-    }
+linked_list_node_t* linked_list_last(linked_list_t* list) {
     if (list->head == NULL) {
         return NULL;
     }
 
+    linked_list_node_t* iter = list->head;
+    while (iter->next != NULL) {
+        iter = iter->next;
+    }
+    return iter;
+}
+
+void linked_list_push(linked_list_t* list, linked_list_node_t* node) {
+    if (list->head == NULL) {
+        list->head = node;
+        return;
+    }
+
+    linked_list_node_t* iter = list->head;
+    while (iter->next != NULL) {
+        iter = iter->next;
+    }
+    iter->next = node;
+}
+
+linked_list_node_t* linked_list_pop(linked_list_t* list) {
     if (list->head->next == NULL) {
         linked_list_node_t* node = list->head;
         list->head = NULL;
