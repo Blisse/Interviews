@@ -6,7 +6,7 @@
 
 int main(int argc, char const *argv[]) {
 
-    std::string input("52...6.........7.13...........4..8..6......5...........418.........3..2...87.....");
+    std::string input("..84...3....3.....9....157479...8........7..514.....2...9.6...2.5....4......9..56");
 
     std::cout << input << std::endl;
 
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]) {
 
     solver->solve();
 
-    parser->write(std::cout, grid);
+    parser->write(std::cout, solver->final_grid());
 
     return 0;
 }
