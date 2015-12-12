@@ -24,6 +24,18 @@ add_executable(
     src/shortestuniqueprefix.cpp
     )
 
+add_executable(
+    states
+    src/states.cpp
+    )
+
+add_executable(
+    coins
+    src/coins.cpp
+    )
+
 target_compile_features(powerset PRIVATE cxx_range_for)
 target_compile_features(mapparser PRIVATE cxx_range_for)
 target_compile_features(shortestuniqueprefix PRIVATE cxx_range_for)
+target_compile_features(states PRIVATE cxx_range_for)
+target_compile_features(coins PRIVATE cxx_range_for)
