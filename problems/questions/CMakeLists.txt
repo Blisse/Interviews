@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-set(CMAKE_LEGACY_CYGWIN_WIN32 0)
 
 project ("c++ questions")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
 enable_testing()
 
@@ -33,9 +34,3 @@ add_executable(
     coins
     src/coins.cpp
     )
-
-target_compile_features(powerset PRIVATE cxx_range_for)
-target_compile_features(mapparser PRIVATE cxx_range_for)
-target_compile_features(shortestuniqueprefix PRIVATE cxx_range_for)
-target_compile_features(states PRIVATE cxx_range_for)
-target_compile_features(coins PRIVATE cxx_range_for)
