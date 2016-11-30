@@ -21,6 +21,11 @@ add_executable(
     )
 
 add_executable(
+    mergesort
+    src/mergesort.cpp
+    )
+
+add_executable(
     shortestuniqueprefix
     src/shortestuniqueprefix.cpp
     )
